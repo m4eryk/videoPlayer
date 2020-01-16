@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VideoPlayer</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="module" src="customPlayer.js" defer></script>
+  <script type="module" src="constant.js" defer></script>
+  <script type="module" src="mediaStreamPlayer.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="video-container">
+      <h1>video with custom control</h1>
+      <video class="video-with-native-control" src="world.mp4" controls>
+        <track default kind="captions" srclang="en" label="English" src="subtitles.vtt" />
+        <track kind="captions" srclang="ru" src="subtitles.vtt" />
+      </video>
+    </div>
+    <div class="video-container">
+      <h1 class="video-container_title">video with native control</h1>
+      <video class="video-with-custom-control" src="world.mp4">
+        <track default kind="captions" srclang="en" src="subtitles.vtt" />
+      </video>
+      <div class="video-control" >
+        <span class="video-control__subtitles"></span>
+        <div class="video-control__button">
+          <button class="video-control__play-button">play</button>
+          <progress class="video-control__progress" value="0" max="100"></progress>
+        </div>
+      </div>
+    </div>
+    <div class="video-container">
+      <h1 class="video-container_title">video with media stream</h1>
+      <video class="video-with-media-stream" controls></video>
+    </div>
+  </div>
+</body>
+</html>
