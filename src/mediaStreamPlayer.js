@@ -7,9 +7,7 @@ const hasGetUserMedia = () => !!(navigator.getUserMedia || (navigator.mediaDevic
 
 const getUserMediaStream = () => {
     if (navigator.getUserMedia) {
-        return new Promise((resolve, reject) => {
-            navigator.getUserMedia(CONSTRAINTS, resolve, reject);
-        });
+        return new Promise((resolve, reject) => navigator.getUserMedia(CONSTRAINTS, resolve, reject));
     } else {
         return Promise.reject(NOT_FOUND_VIDEO_DEVICE);
     }
