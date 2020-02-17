@@ -17,8 +17,7 @@ const videoTimeUpdate = () => {
     videoProgressInc();
 
     if (videoContext.textTracks[0].cues) {
-        Object.keys(videoContext.textTracks[0].cues)
-            .forEach(key => setSubtitle(videoContext.textTracks[0].cues[key]));
+        Object.keys(videoContext.textTracks[0].cues).forEach(key => setSubtitle(videoContext.textTracks[0].cues[key]));
     }
 };
 
